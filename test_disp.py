@@ -1,5 +1,6 @@
 import torch
-from skimage.transform import resize as imresize
+# from skimage.transform import resize as imresize
+from scipy.misc import imresize
 from imageio import imread
 import numpy as np
 from path import Path
@@ -28,6 +29,7 @@ def load_tensor_image(filename, args):
     h,w,_ = img.shape
     if (not args.no_resize) and (h != args.img_height or w != args.img_width):
         img = imresize(img, (args.img_height, args.img_width)).astype(np.float32)
+        # img = resize.transform(img, (args.img_height, args.img_width)).astype(np.float32)
     img = np.transpose(img, (2, 0, 1))
     tensor_img = ((torch.from_numpy(img).unsqueeze(0)/255 - 0.5)/0.5).to(device)
     return tensor_img

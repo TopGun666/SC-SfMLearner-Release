@@ -91,7 +91,10 @@ def main():
 
     if args.output_dir is not None:
         np.save(output_dir/'predictions.npy', predictions_array)
-
+    # print(predictions_array.shape)
+    # data = predictions_array.reshape(-1,1)
+    # print(data.shape)
+    # np.savetxt(r"./pose.txt", data, delimiter=' ')
 
 def compute_pose_error(gt, pred):
     RE = 0

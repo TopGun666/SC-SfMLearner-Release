@@ -1,4 +1,4 @@
-TRAIN_SET=/media/bjw/Disk/Dataset/cs_256/
+TRAIN_SET=/data/yhe3/dataset/cs_256/
 python train.py $TRAIN_SET \
 --dispnet DispResNet \
 --num-scales 1 \

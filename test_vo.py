@@ -58,6 +58,7 @@ def main():
     tensor_img1 = load_tensor_image(test_files[0], args)
 
     for iter in tqdm(range(n - 1)):
+        # print(iter)
         tensor_img2 = load_tensor_image(test_files[iter+1], args)
         pose = pose_net(tensor_img1, tensor_img2)
         pose_mat = pose_vec2mat(pose).squeeze(0).cpu().numpy()

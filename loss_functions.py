@@ -142,7 +142,7 @@ def create_gaussian_window(window_size, channel):
     window = _2D_window.expand(channel, 1, window_size, window_size).contiguous()
     return window
 
-window_size = 11
+window_size = 5
 gaussian_img_kernel = create_gaussian_window(window_size, 3).float().to(device)
 
 

@@ -68,7 +68,7 @@ class cityscapes_loader(object):
         city_name = city.basename()
         camera_folder = self.dataset_dir/'camera'/self.split/city_name
         camera_file = camera_folder.files('{}_{}_*_camera.json'.format(city_name, scene_id))[0]
-        frame_id = camera_file.split('_')[2]
+        frame_id = camera_file.split('_')[4]
         frame_path = city/'{}_{}_{}_leftImg8bit.png'.format(city_name, scene_id, frame_id)
 
         with open(camera_file, 'r') as f:
